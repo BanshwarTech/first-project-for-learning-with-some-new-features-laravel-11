@@ -258,16 +258,14 @@
             </tr>
         </tbody>
     </table>
+![Screenshot (60)](https://github.com/user-attachments/assets/58736a67-e63f-4f0f-93a0-083b28d8bc98)
 
-<<<<<<< HEAD
+
 ### Blade Template Main Directives
 
 - @include
 - @section
 - @extend
 - @yield
-=======
-![9ec5cdfe4d18f004394209d1fb0ddebb](https://github.com/user-attachments/assets/dce7f3ae-f123-454b-b782-83edaa7744cb)
-
->>>>>>> 0236cf2fda63de9abbb93b143fbadc0fd3f0ed17
+![Screenshot (59)](https://github.com/user-attachments/assets/9758a94e-6ce1-4543-a82a-6054be6716a9)![Screenshot (63)](https://github.com/user-attachments/assets/a8f2f278-bf89-4212-bde0-96c6f345484e)
 
