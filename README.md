@@ -259,10 +259,15 @@
         </tbody>
     </table>
 
+<<<<<<< HEAD
 ### Blade Template Main Directives
 
 - @include
 - @section
 - @extend
 - @yield
+=======
+![9ec5cdfe4d18f004394209d1fb0ddebb](https://github.com/user-attachments/assets/dce7f3ae-f123-454b-b782-83edaa7744cb)
+
+>>>>>>> 0236cf2fda63de9abbb93b143fbadc0fd3f0ed17
 
