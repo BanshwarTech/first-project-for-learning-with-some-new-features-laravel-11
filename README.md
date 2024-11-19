@@ -99,10 +99,8 @@
 ### BLADE Template
 
 - What is Blade Template?
-- Blade Template
-- → Template Engine Based on PHP
 
-- Blade provides a clean and convenient way to create views in Laravel.
+- Blade Template : Template Engine Based on PHP. It provides a clean and convenient way to create views in Laravel.
 
 ##### Benefits:
 1. Create Dynamic and Reusable Templates
@@ -261,4 +259,10 @@
         </tbody>
     </table>
 
+### Blade Template Main Directives
+
+- @include
+- @section
+- @extend
+- @yield
 
