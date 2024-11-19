@@ -90,7 +90,7 @@
 
 - Example:
   Route::fallback(function () {
-      return "<h1>Page Not Found</h1>";
+      return "<h6>Page Not Found</h6>";
   });
   - This is helpful for displaying a "404 Page Not Found" message when the requested route does not exist.
 
