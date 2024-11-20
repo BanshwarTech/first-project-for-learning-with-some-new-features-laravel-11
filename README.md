@@ -267,7 +267,11 @@
 - @section
 - @extend
 - @yield
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> cd91b104665b545967a85416f7f8767eaccb8bfc
 ## Blade Loop Variables for @foreach
 <table>
         <thead>
@@ -375,7 +379,7 @@
 Notes:
 - Ensure you have a backup of your database before performing destructive operations like `reset`, `refresh`, or `fresh`.
 - Use the `--force` flag to bypass confirmation prompts in production environments (use with caution).
-
+### numeric datatypes in mysql
 1. BIT(size)          1 to 64
 2. TINYINT(size)     -128 to 127
 3. INT(size)         -2147483648 to 2147483647
@@ -391,17 +395,17 @@ Notes:
 13. DEC(size, d)
 
 Schema::create('table_name', function (Blueprint $table) {
-    $table->bit('column_name', 64); // BIT(size) 1 to 64
-    $table->tinyInteger('column_name'); // TINYINT(size) -128 to 127
-    $table->integer('column_name'); // INT(size) -2147483648 to 2147483647
-    $table->smallInteger('column_name'); // SMALLINT(size) -32768 to 32767
-    $table->mediumInteger('column_name'); // MEDIUMINT(size) -8388608 to 8388607
-    $table->bigInteger('column_name'); // BIGINT(size) -9223372036854775808 to 9223372036854775807
-    $table->boolean('column_name'); // BOOL / BOOLEAN 0 or 1
-    $table->float('column_name', 8, 2); // FLOAT(p) with precision
-    $table->double('column_name', 15, 8); // DOUBLE(size, d)
-    $table->decimal('column_name', 60, 30); // DECIMAL(size, d) Size=60, d=30
-    $table->decimal('column_name', 60, 30); // DEC(size, d) (same as DECIMAL)
+-  $table->bit('column_name', 64); // BIT(size) 1 to 64
+   - $table->tinyInteger('column_name'); // TINYINT(size) -128 to 127
+  -  $table->integer('column_name'); // INT(size) -2147483648 to 2147483647
+   - $table->smallInteger('column_name'); // SMALLINT(size) -32768 to 32767
+  -  $table->mediumInteger('column_name'); // MEDIUMINT(size) -8388608 to 8388607
+  -  $table->bigInteger('column_name'); // BIGINT(size) -9223372036854775808 to 9223372036854775807
+   -   $table->boolean('column_name'); // BOOL / BOOLEAN 0 or 1
+   -   $table->float('column_name', 8, 2); // FLOAT(p) with precision
+   -   $table->double('column_name', 15, 8); // DOUBLE(size, d)
+   -   $table->decimal('column_name', 60, 30); // DECIMAL(size, d) Size=60, d=30
+   -   $table->decimal('column_name', 60, 30); // DEC(size, d) (same as DECIMAL)
 });
 
 ## Modification with Migration
