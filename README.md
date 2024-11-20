@@ -267,10 +267,9 @@
 - @section
 - @extend
 - @yield
-<<<<<<< HEAD
-## Blade Loop Variables for @foreach
 
-    <table>
+## Blade Loop Variables for @foreach
+<table>
         <thead>
             <tr>
                 <th>Property</th>
@@ -322,8 +321,8 @@
     </table>
 
 ###
-php artisan route:list --except-vendor
-php artisan route:list --path=user // with name
+- php artisan route:list --except-vendor
+- php artisan route:list --path=user // with name
 
 ### laravel 11 new features
 
@@ -338,10 +337,10 @@ php artisan route:list --path=user // with name
 - some new artisan commands 
 - named arguments removed
 
-Laravel Migration Commands
+#### Laravel Migration Commands
 ==========================
 
-Below are the commonly used Laravel Artisan commands for handling database migrations:
+#### Below are the commonly used Laravel Artisan commands for handling database migrations:
 
 1. Create a Migration
    Command: php artisan make:migration create_students_table
@@ -405,9 +404,126 @@ Schema::create('table_name', function (Blueprint $table) {
     $table->decimal('column_name', 60, 30); // DEC(size, d) (same as DECIMAL)
 });
 
+## Modification with Migration
+- Column Modification
+    - Add New Column
+    - Rename Column
+    - Delete Column
+    - Change Column Order 
+    - Change Datatypes or Size of Column
 
+- Table Modification
+   - Rename Table
+   - Delete Table
 
-=======
-![Screenshot (63)](https://github.com/user-attachments/assets/a8f2f278-bf89-4212-bde0-96c6f345484e)
->>>>>>> 061b208e93fa3276b4c8eadc13b747e42ecd493c
+### Add to Column with Migration
+- php artisan make:migration update_students_table --table=students  // it is used to update column table 
+- php artisan migrate 
 
+   -- $table->renameColumn('from','to'); 
+   -- $table->dropColumn('city');
+   -- table->dropColumn(['city','avtar','location']);
+   -- $table->string('name',50)->change();
+   -- $table->integer('votes')->unsigned()->default(1)->comment('my comment')->change();
+   -- change column order 
+            $table->after('password',function(Blueprint $table){
+
+                $table->string('address');
+                $table->string('city');
+
+            })
+### Table Modification
+- $table->rename('from','to');
+- $table->drop('users');          
+
+### Laravel: Constraints with Migration
+This guide explains how to use constraints in Laravel migrations to enforce database rules such as NOT NULL, UNIQUE, DEFAULT, PRIMARY KEY, FOREIGN KEY, and CHECK.
+1. NOT NULL
+    - $table->string('email')->nullable();
+    - Adding nullable() allows the column to accept NULL values.
+    - If omitted, the column will be NOT NULL by default.
+2. UNIQUE
+
+    - At the column level:
+        -- $table->string('email')->unique();
+
+    - Or separately:
+        -- $table->unique('email');
+
+3. DEFAULT VALUE
+
+    - $table->string('city')->default('Agra');
+    - Sets a default value for the column. If no value is provided, 'Agra' will be stored.
+
+4. PRIMARY KEY
+
+    - $table->primary('user_id');
+    - Declares user_id as the primary key.
+
+5. FOREIGN KEY
+
+    - $table->foreign('user_id')->references('id')->on('users');
+    - Creates a foreign key relationship linking the user_id column to the id column in the users table.
+
+6. CHECK CONSTRAINT
+
+    - DB::statement('ALTER TABLE users ADD CONSTRAINT age CHECK (age > 18);');
+    - Adds a CHECK constraint using raw SQL. Laravel migrations do not currently support CHECK constraints natively, so raw SQL is necessary.
+
+### LARAVEL: Column Modifiers 
+<table>
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>->after('column')</code></td>
+      <td>Places the column <strong>after</strong> another column in the table (MySQL).</td>
+      <td><code>$table->string('new_column')->after('existing_column');</code></td>
+    </tr>
+    <tr>
+      <td><code>->autoIncrement()</code></td>
+      <td>Sets an INTEGER column as auto-incrementing (used for primary keys).</td>
+      <td><code>$table->id()->autoIncrement();</code></td>
+    </tr>
+    <tr>
+      <td><code>->comment('my comment')</code></td>
+      <td>Adds a comment to the column (MySQL/PostgreSQL).</td>
+      <td><code>$table->string('username')->comment('Stores the username of the user');</code></td>
+    </tr>
+    <tr>
+      <td><code>->first()</code></td>
+      <td>Places the column as the <strong>first</strong> column in the table (MySQL).</td>
+      <td><code>$table->string('new_column')->first();</code></td>
+    </tr>
+    <tr>
+      <td><code>->from($integer)</code></td>
+      <td>Sets the starting value of an auto-incrementing field (MySQL/PostgreSQL).</td>
+      <td><code>$table->increments('id')->from(1000);</code></td>
+    </tr>
+    <tr>
+      <td><code>->invisible()</code></td>
+      <td>Makes the column <strong>invisible</strong> to SELECT * queries (MySQL).</td>
+      <td><code>$table->string('secret_key')->invisible();</code></td>
+    </tr>
+    <tr>
+      <td><code>->unsigned()</code></td>
+      <td>Marks an INTEGER column as <strong>unsigned</strong> (MySQL).</td>
+      <td><code>$table->unsignedInteger('user_id');</code></td>
+    </tr>
+    <tr>
+      <td><code>->useCurrent()</code></td>
+      <td>Sets a TIMESTAMP column to use the current timestamp as the default value.</td>
+      <td><code>$table->timestamp('created_at')->useCurrent();</code></td>
+    </tr>
+    <tr>
+      <td><code>->useCurrentOnUpdate()</code></td>
+      <td>Updates the TIMESTAMP column to the current timestamp when a record is updated (MySQL).</td>
+      <td><code>$table->timestamp('updated_at')->useCurrentOnUpdate();</code></td>
+    </tr>
+  </tbody>
+</table>
