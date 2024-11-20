@@ -258,6 +258,8 @@
             </tr>
         </tbody>
     </table>
+![Screenshot (60)](https://github.com/user-attachments/assets/58736a67-e63f-4f0f-93a0-083b28d8bc98)
+
 
 ### Blade Template Main Directives
 
@@ -265,6 +267,7 @@
 - @section
 - @extend
 - @yield
+<<<<<<< HEAD
 ## Blade Loop Variables for @foreach
 
     <table>
@@ -404,4 +407,7 @@ Schema::create('table_name', function (Blueprint $table) {
 
 
 
+=======
+![Screenshot (63)](https://github.com/user-attachments/assets/a8f2f278-bf89-4212-bde0-96c6f345484e)
+>>>>>>> 061b208e93fa3276b4c8eadc13b747e42ecd493c
 
