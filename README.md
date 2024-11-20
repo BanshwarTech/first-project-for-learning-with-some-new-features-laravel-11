@@ -106,8 +106,8 @@
 1. Create Dynamic and Reusable Templates
 2. Supports HTML & PHP
 
-<h1>Blade vs Core PHP Comparison</h1>
-    <table>
+### Blade vs Core PHP Comparison
+   <table>
         <thead>
             <tr>
                 <th>Feature</th>
@@ -259,15 +259,149 @@
         </tbody>
     </table>
 
-<<<<<<< HEAD
 ### Blade Template Main Directives
 
 - @include
 - @section
 - @extend
 - @yield
-=======
-![9ec5cdfe4d18f004394209d1fb0ddebb](https://github.com/user-attachments/assets/dce7f3ae-f123-454b-b782-83edaa7744cb)
+## Blade Loop Variables for @foreach
 
->>>>>>> 0236cf2fda63de9abbb93b143fbadc0fd3f0ed17
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>$loop->index</code></td>
+                <td>The index of the current loop iteration (starts at 0).</td>
+            </tr>
+            <tr>
+                <td><code>$loop->iteration</code></td>
+                <td>The current loop iteration (starts at 1).</td>
+            </tr>
+            <tr>
+                <td><code>$loop->remaining</code></td>
+                <td>The iterations remaining in the loop.</td>
+            </tr>
+            <tr>
+                <td><code>$loop->count</code></td>
+                <td>The total number of items in the array being iterated.</td>
+            </tr>
+            <tr>
+                <td><code>$loop->first</code></td>
+                <td>Whether this is the first iteration through the loop.</td>
+            </tr>
+            <tr>
+                <td><code>$loop->last</code></td>
+                <td>Whether this is the last iteration through the loop.</td>
+            </tr>
+            <tr>
+                <td><code>$loop->even</code></td>
+                <td>Whether this is an even iteration through the loop.</td>
+            </tr>
+            <tr>
+                <td><code>$loop->odd</code></td>
+                <td>Whether this is an odd iteration through the loop.</td>
+            </tr>
+            <tr>
+                <td><code>$loop->depth</code></td>
+                <td>The nesting level of the current loop.</td>
+            </tr>
+            <tr>
+                <td><code>$loop->parent</code></td>
+                <td>When in a nested loop, the parent's loop variable.</td>
+            </tr>
+        </tbody>
+    </table>
+
+###
+php artisan route:list --except-vendor
+php artisan route:list --path=user // with name
+
+### laravel 11 new features
+
+- minimum requirement  PHP 8.2
+- improve folder structure
+- Default Database - SQLite
+- Laravel Reverb - WebSocket Server
+- new once method
+- model casts changes
+- per-second rate limiting 
+- eager load limit 
+- some new artisan commands 
+- named arguments removed
+
+Laravel Migration Commands
+==========================
+
+Below are the commonly used Laravel Artisan commands for handling database migrations:
+
+1. Create a Migration
+   Command: php artisan make:migration create_students_table
+
+2. Run Migrations
+   Command: php artisan migrate
+
+3. Check Migration Status
+   Command: php artisan migrate:status
+
+4. Rollback the Last Migration Batch
+   Command: php artisan migrate:rollback
+
+5. Rollback a Specific Number of Batches
+   Command: php artisan migrate:rollback --step=2
+
+6. Rollback a Specific Batch
+   Command: php artisan migrate:rollback --batch=2
+
+7. Reset All Migrations
+   *Removes all tables from the database.*
+   Command: php artisan migrate:reset
+
+8. Refresh Migrations
+   *Drops all tables and runs migrations again.*
+   Command: php artisan migrate:refresh
+
+9. Fresh Migrations
+   *Rolls back all migrations and then runs them again.*
+   Command: php artisan migrate:fresh
+
+Notes:
+- Ensure you have a backup of your database before performing destructive operations like `reset`, `refresh`, or `fresh`.
+- Use the `--force` flag to bypass confirmation prompts in production environments (use with caution).
+
+1. BIT(size)          1 to 64
+2. TINYINT(size)     -128 to 127
+3. INT(size)         -2147483648 to 2147483647
+4. INTEGER(size)     -2147483648 to 2147483647
+5. SMALLINT(size)    -32768 to 32767
+6. MEDIUMINT(size)   -8388608 to 8388607
+7. BIGINT(size)      -9223372036854775808 to 9223372036854775807
+8. BOOL              0 / 1
+9. BOOLEAN           0 / 1
+10. FLOAT(p)
+11. DOUBLE(size, d)  255.568
+12. DECIMAL(size, d) Size = 60, d = 30
+13. DEC(size, d)
+
+Schema::create('table_name', function (Blueprint $table) {
+    $table->bit('column_name', 64); // BIT(size) 1 to 64
+    $table->tinyInteger('column_name'); // TINYINT(size) -128 to 127
+    $table->integer('column_name'); // INT(size) -2147483648 to 2147483647
+    $table->smallInteger('column_name'); // SMALLINT(size) -32768 to 32767
+    $table->mediumInteger('column_name'); // MEDIUMINT(size) -8388608 to 8388607
+    $table->bigInteger('column_name'); // BIGINT(size) -9223372036854775808 to 9223372036854775807
+    $table->boolean('column_name'); // BOOL / BOOLEAN 0 or 1
+    $table->float('column_name', 8, 2); // FLOAT(p) with precision
+    $table->double('column_name', 15, 8); // DOUBLE(size, d)
+    $table->decimal('column_name', 60, 30); // DECIMAL(size, d) Size=60, d=30
+    $table->decimal('column_name', 60, 30); // DEC(size, d) (same as DECIMAL)
+});
+
+
+
 
