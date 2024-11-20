@@ -267,5 +267,5 @@
 - @section
 - @extend
 - @yield
-![Screenshot (59)](https://github.com/user-attachments/assets/9758a94e-6ce1-4543-a82a-6054be6716a9)![Screenshot (63)](https://github.com/user-attachments/assets/a8f2f278-bf89-4212-bde0-96c6f345484e)
+![Screenshot (63)](https://github.com/user-attachments/assets/a8f2f278-bf89-4212-bde0-96c6f345484e)
 
