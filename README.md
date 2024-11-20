@@ -269,8 +269,7 @@
 - @yield
 <<<<<<< HEAD
 ## Blade Loop Variables for @foreach
-
-    <table>
+<table>
         <thead>
             <tr>
                 <th>Property</th>
