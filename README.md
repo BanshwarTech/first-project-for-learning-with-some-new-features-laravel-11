@@ -267,11 +267,7 @@
 - @section
 - @extend
 - @yield
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> cd91b104665b545967a85416f7f8767eaccb8bfc
+  
 ## Blade Loop Variables for @foreach
 <table>
         <thead>
@@ -424,17 +420,15 @@ Schema::create('table_name', function (Blueprint $table) {
 - php artisan make:migration update_students_table --table=students  // it is used to update column table 
 - php artisan migrate 
 
-   -- $table->renameColumn('from','to'); 
-   -- $table->dropColumn('city');
-   -- table->dropColumn(['city','avtar','location']);
-   -- $table->string('name',50)->change();
-   -- $table->integer('votes')->unsigned()->default(1)->comment('my comment')->change();
-   -- change column order 
+   - $table->renameColumn('from','to'); 
+   - $table->dropColumn('city');
+   - table->dropColumn(['city','avtar','location']);
+   - $table->string('name',50)->change();
+   - $table->integer('votes')->unsigned()->default(1)->comment('my comment')->change();
+   - change column order 
             $table->after('password',function(Blueprint $table){
-
                 $table->string('address');
                 $table->string('city');
-
             })
 ### Table Modification
 - $table->rename('from','to');
