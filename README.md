@@ -623,3 +623,11 @@ if we insert more than 1000 data in database using seeder then first we create o
 
 if we use toi insert fakke data in database for only tesing purpose in seeder then : 
         fake()->fieldwith();
+
+### LARAVEL FACTORIES
+1. php artisan make:model Student 
+2. php artisan make:factory StudentFactory
+3. define in StudentFactory
+4. call in seeder/databaseseeder.php
+    Student::factory()->count(5)->create();
+5. php artisan db:seed
