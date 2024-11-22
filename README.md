@@ -267,11 +267,6 @@
 - @section
 - @extend
 - @yield
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 689fbdf871c527832528e30a7a943172eefb5ab5
 ## Blade Loop Variables for @foreach
 <table>
         <thead>
