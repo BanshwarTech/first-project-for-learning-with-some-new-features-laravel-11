@@ -631,3 +631,33 @@ if we use toi insert fakke data in database for only tesing purpose in seeder th
 4. call in seeder/databaseseeder.php
     Student::factory()->count(5)->create();
 5. php artisan db:seed
+    if we rremove before data then rnters new fake data : Student::factory(5)->create();
+6. create factory with model 
+    php artisan make::factory StudentFactory --model= Student
+                    OR
+    php artisan make:model Student -f
+
+### some hwere condition function with fetching the data 
+    1.  orWhere()
+    2.  whereBetween()
+    3.  whereIn()
+    4.  whereNull()
+    5.  whereNotNUll()
+    6.  whereMonth()
+    7.  whereDay()
+    8.  whereYear()
+    9.  whereTime()
+    10. whereDate()
+    11. latest()
+    12. oldest()   
+    13. inRandomOrder()
+    14. limit()
+    15. offset()=> skip()
+    16. count()
+    17. max() => only for numeric
+    18. min() => only for numeric
+    19. avg() => only for numeric
+    20. sum() => only for numeric
+
+    
+
